@@ -1,0 +1,16 @@
+{
+  "name": "maya",
+  "version": "0.5",
+  "private": true,
+  "scripts": {
+    "start": "node maya.js"
+  },
+  "dependencies": {
+    "express": "3.2.0",
+    "jade": "*",
+    "nools": "0.1.0",
+    "mysql": "2.0.0",
+    "googleapis": "0.2.9-alpha",
+    "node-neo4j": "0.2.x"
+  }
+}

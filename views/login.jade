@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= subtitle
+  p
+  p
+  p #{title} requires your permission to access Google aplications. Please, go to this URL:
+  a(href='https://accounts.google.com/o/oauth2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar&response_type=code&client_id=785633617966-egc2hoff03jeqs3c2s5gl5k9qpsreedj.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob') https://accounts.google.com
+  p
+  p Access with your Google ID and copy the code you'll get into the form on the right side.
+
+block sidebar
+  .widget
+    h1 Code
+    p
+    form(name='input', action='/googleapis', method='get')
+    key 
+      input(type="text", name="Codigo")
+
+      input(type="submit", value="Submit")
+    p
+

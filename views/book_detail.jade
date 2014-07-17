@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  p
+  if result == "No hay historial para este libro."
+    p="No hay historial para este libro." 
+  p
+  dl
+  each val in result
+    if val.id
+      dt= "" + val.user
+      p= "Préstamo: " + val.from 
+      p= "Devolución: " + val.until
+    if val.idBooksDetails
+      dt= " " + val.Title
+      p= " " + val.Author
+      if val.URLimagen
+        img.book(src=val.URLimagen)
+      
+      if val.URL
+        p= "URL: "
+          a(href=val.URL) Más información...
+      
+           
+     
+block sidebar
+  .widget
+    h1= subtitle
+    p
+    each val in result
+      if val.idBooksDetails
+        p= "#" + val.idBooksDetails 
+        p= "ISBN: " + val.ISBN
+
+  p 
+  .widget
+    p
+    each val in result
+      if val.idBooksDetails
+        p= "" + val.Status
+        if val.Status== "PRESTADO"
+          p="a: " + val.User 
+        p
+          a(href='./'+val.idBooksDetails+'/history') Ver historial de préstamo

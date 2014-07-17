@@ -1,0 +1,103 @@
+
+
+// Objetos
+define User {
+    alias : '',
+    id: '',
+    constructor : function(alias, id){
+        this.alias = alias;
+        this.id = id;
+    }
+}
+
+define Event {
+    name : '',
+    message : 'Evento',
+    class : '',
+    method: '',
+    params : '',
+    constructor : function(name, message){
+        this.name = name;
+        this.message = message;
+    }
+}
+
+// Reglas
+rule usuarioLlega {
+    when {
+        e : Event e.name =~ /.*llegada$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.class = 'biix';
+        e.method = 'newEvent';
+        e.params = 'llegada';
+        //console.log("biix.newEvent.llegada:" + u.alias);
+    }
+}
+
+rule nievesLlega {
+    when {
+        e : Event e.name =~ /.*llegada$/;
+        u : User u.alias =~ /.*nieves$/;
+    }
+    then {
+        e.class = 'biix';
+        e.method = 'newEvent';
+        e.params = 'llegada';
+        //console.log("biix.newEvent.llegada:" + u.alias);
+    }
+}
+
+rule carlosLlega {
+    when {
+        e : Event e.name =~ /.*llegada$/;
+        u : User u.alias =~ /.*carlos$/;
+    }
+    then {
+        e.class = 'biix';
+        e.method = 'newEvent';
+        e.params = 'llegada';
+        //console.log("biix.newEvent.llegada:" + u.alias);
+    }
+}
+
+rule usuarioSale {
+    when {
+        e : Event e.name =~ /.*salida$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.class = 'biix';
+        e.method = 'newEvent';
+        e.params = 'salida';
+        //console.log("biix.newEvent.salida:" + u.alias);
+    }
+}
+
+rule usuarioConsultaAgendaHoy {
+    when {
+        e : Event e.name =~ /.*agendaHoy$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.class = 'calendar';
+        e.method = 'agendaHoy';
+        e.params = '';
+        //console.log("calendar.agendaHoy:" + u.alias);
+    }
+}
+
+rule usuarioConsultaCalendarios {
+    when {
+        e : Event e.name =~ /.*listaCalendarios$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.class = 'calendar';
+        e.method = 'listaCalendarios';
+        e.params = '';
+        //console.log("calendar.listaCalendarios:" + u.alias);
+    }
+}
+

@@ -1,0 +1,77 @@
+
+
+// Objetos
+define User {
+    alias : '',
+    id: '',
+    constructor : function(alias, id){
+        this.alias = alias;
+        this.id = id;
+    }
+}
+
+define Event {
+    name : '',
+    message : 'Evento',
+    action: '',
+    constructor : function(name, message){
+        this.name = name;
+        this.message = message;
+    }
+}
+
+
+// Reglas
+rule nievesLlega {
+    //salience: 10,
+    when {
+        e : Event e.name =~ /.*llegada$/;
+        u : User u.alias =~ /.*nieves$/;
+    }
+    then {
+        //avisa a carlos (idUser = 3)
+        e.action= 'maya.notify.newNotificationToUser(0, 3,\"Ha llegado Nieves\", 5, hash); maya.biix.newEvent(\"llegada\", \"'+u.alias+'\", hash);';  
+    }
+}
+
+rule usuarioLlega {
+    //salience: 5,
+    when {
+        e : Event e.name =~ /.*llegada$/;
+        u : User isNotNull(u) and u.alias !=~ /.*nieves$/; //
+    }
+    then {
+        e.action='maya.biix.newEvent(\"llegada\", \"'+u.alias+'\", hash);'
+    }
+}
+
+rule usuarioSale {
+    when {
+        e : Event e.name =~ /.*salida$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.action='maya.biix.newEvent(\"salida\", \"'+u.alias+'\", hash);'
+    }
+}
+
+rule usuarioConsultaAgendaHoy {
+    when {
+        e : Event e.name =~ /.*agendahoy$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.action='maya.calendar.agendaHoy(\"'+u.alias+'\", hash);'
+    }
+}
+
+rule usuarioConsultaCalendarios {
+    when {
+        e : Event e.name =~ /.*listacalendarios$/;
+        u : User isNotNull(u);
+    }
+    then {
+        e.action='maya.calendar.listaCalendarios(\"'+u.alias+'\", hash);'
+    }
+}
+

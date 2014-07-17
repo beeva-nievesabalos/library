@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  p 
+  p
+  h1= "Libros disponibles" 
+  p
+  dl
+  each val in result
+    if val.Status== "DISPONIBLE"
+      dt 
+        a(href='./' + val.idBooksDetails) #{val.Title} 
+      dd= "\t" + val.Author
+
+  h1= "Libros prestados" 
+  p
+  p
+  each val in result
+    if val.Status== "PRESTADO"
+      dt 
+        a(href='./' + val.idBooksDetails) #{val.Title} 
+      dd= "\t" + val.Author
+
+
+block sidebar
+  .widget
+    h1= subtitle
+    p= "Beeva Library es el conjunto de libros de la biblioteca de BEEVA Innovación"
+    p

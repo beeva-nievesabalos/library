@@ -1,0 +1,36 @@
+doctype 5
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='/css/component.css')
+    link(rel='stylesheet', href='/css/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/js/modernizr.custom.js')
+  body
+    .mp-pusher#mp-pusher
+      nav(id="mp-menu", class="mp-menu")
+          div.mp-level
+            h2.icon.icon-book BEEVA Library
+            ul
+              li.icon
+                a.icon.icon-list(href="/beevalibs/book/list") List
+                 
+                    
+      header
+        h1
+          a(href="/beevalibs/book/list", title="BEEVA Library") BEEVA Library
+
+      a#trigger.menu-trigger.icon-align-justify(href="#") Menu
+      .container
+        .main-content
+          block content
+        .sidebar
+          block sidebar
+      footer
+        p 2013 - BEEVA Innovation
+    script(src="/js/classie.js")
+    script(src="/js/mlpushmenu.js")
+    script
+      new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) )
+    
+

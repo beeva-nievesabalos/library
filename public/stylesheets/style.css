@@ -1,0 +1,264 @@
+/*
+ * Import nib
+ */
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Quicksand");
+@import url("http://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+/*
+ * Nib provides a CSS reset
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+/*
+ * Store the main color and
+ * background color as variables
+ */
+body {
+  font-family: 'Roboto';
+  background-color: #fff;
+  font-size: 16px;
+  color: #444;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+a:hover,
+a:focus {
+  outline: none;
+}
+header {
+  font-family: 'Rancho';
+/*padding 50px 10px*/
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+/*
+   * Note the use of the `main-color`
+   * variable and the `darken` function
+   */
+  background-color: #1abc9c;
+  border-bottom: 1px solid #12846d;
+  text-shadow: 0px -1px 0px #12846d;
+}
+header h1 {
+  display: block;
+  text-align: center;
+  width: 500px;
+  height: 140px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  text-indent: -10000000px;
+  background: transparent url("/img/logo-maya-white.png") no-repeat center center;
+}
+header h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+.logo {
+  width: 300px;
+}
+.main-content {
+  float: left;
+  width: 500px;
+}
+.main-content p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.main-content a {
+  color: #1abc9c;
+}
+.main-content dt {
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.main-content dd {
+  font-family: 'Roboto';
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.main-content ul {
+  padding-left: 25px;
+}
+.main-content li {
+  list-style: circle;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  font-family: 'Roboto Condensed';
+  text-transform: capitalize;
+  margin: 2px;
+}
+.main-content h1 {
+  font-size: 26px;
+  text-shadow: 0px -1px 0px #12846d;
+}
+.main-content h2 {
+  font-size: 22px;
+  color: #1abc9c;
+}
+.main-content h3 {
+  font-size: 20px;
+  margin-left: 18px;
+  text-transform: none;
+}
+.main-content .book {
+  border: 1px solid #1abc9c;
+  width: 400px;
+  heigth: 400px;
+}
+.main-content .splash {
+  border: 1px solid #1abc9c;
+  width: 800px;
+}
+.sidebar {
+  float: left;
+  width: 300px;
+}
+.sidebar .widget {
+/*
+     * Note the lack of vendor
+     * prefixes here. Nib will
+     * add them for us
+     */
+  text-align: center;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  background-color: #1abc9c;
+/*box-shadow inset 0px 0px 0px 3px rgba(#fff, 0.8), 0px 3px 0px -2px rgba(#000, 0.1)*/
+}
+.sidebar .widget h1 {
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+  margin: 13px 10px 4px 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ddd;
+  -webkit-border-radius: 2px 2px 0px 0px;
+  border-radius: 2px 2px 0px 0px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.sidebar .widget p {
+  font-family: 'Roboto';
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+p {
+  line-height: 1.8;
+}
+footer {
+  width: 700px;
+  margin: 50px auto;
+  border-top: 2px dotted #ccc;
+  padding-top: 5px;
+  font-size: 15px;
+}
