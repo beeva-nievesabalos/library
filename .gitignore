@@ -25,4 +25,7 @@ build/Release
 node_modules
 
 credentials.json
+<<<<<<< HEAD
 
+=======
+>>>>>>> e7d513975a285cdc4dfda3e578a57f6d672ca78f
