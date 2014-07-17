@@ -23,7 +23,7 @@ function compile(str, path) {
 }
 
 // all environments
-server.set('port', process.env.PORT || 3000);
+server.set('port', process.env.PORT || 8030);
 server.set('views', __dirname + '/views');
 server.set('view engine', 'jade');
 server.use(express.favicon());

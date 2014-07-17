@@ -16,8 +16,11 @@ maya.db.getActivesAgentsInformation(function(result){
     var numAgents = result.length;
     for (var i = 0; i < numAgents; i++) {
       var agent = result[i].alias;
-      maya[agent] = require(result[i].uri);
-      maya[agent].info = result[i];
+      console.log(agent);
+      if(agent == "beevalibs"){
+         maya[agent] = require(result[i].uri);
+         maya[agent].info = result[i];
+      }
     }
 
       /**
@@ -45,7 +48,7 @@ maya.db.getActivesAgentsInformation(function(result){
       */
         // Creamos el servidor y lo lanzamos 
         http.createServer(maya.server).listen(maya.server.get('port'), function(){
-          //console.log('\n\n...Maya server listening on port ' + maya.server.get('port'));
+        console.log('\n\n...Maya server listening on port ' + maya.server.get('port'));
         });
 });
 
